@@ -1,0 +1,25 @@
+#Here's how you can create side-by-side boxplots and histograms for the given data:
+
+```R
+# Create vectors for the data
+Frequency <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2)
+BP <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+First <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)  # Assuming "bad" as 1 and "good" as 0
+Second <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)  # Assuming "low" as 0 and "high" as 1
+FinalDecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1)  # Assuming "low" as 0 and "high" as 1
+
+# Combine into a data frame
+hospital_data <- data.frame(Frequency, BP, First, Second, FinalDecision)
+
+# Plot side-by-side boxplots
+par(mfrow = c(1, 2))  # Set up the plotting area
+boxplot(BP ~ First, data = hospital_data, xlab = "First Assessment", ylab = "Blood Pressure", main = "Blood Pressure by First Assessment")
+boxplot(BP ~ Second, data = hospital_data, xlab = "Second Assessment", ylab = "Blood Pressure", main = "Blood Pressure by Second Assessment")
+
+# Plot histograms
+hist(BP, main = "Histogram of Blood Pressure", xlab = "Blood Pressure", col = "lightblue")
+```
+
+#In the boxplots, you can observe the distribution of blood pressure values among patients categorized by their first and second assessments. This can help identify any trends or differences in blood pressure levels based on the initial assessments by the general and external doctors.
+
+#The histograms provide a visual representation of the distribution of blood pressure values across all patients. This can help in understanding the overall spread and central tendency of blood pressure in the patient population.
