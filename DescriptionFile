@@ -1,0 +1,9 @@
+Package: MyDataAnalysis
+Title: A Package for Data Analysis
+Version: 0.1.0
+Authors@R: "Amanda Hidalgo <amandahidalgo125@gmail.com> [aut, cre]"
+Description: MyDataAnalysis is a comprehensive R package designed to streamline the process of data analysis. It provides a wide range of functions for data cleaning, visualization, and statistical analysis, making it easier for users to explore and interpret their data.
+Depends: R (>= 3.6.0)
+Imports: dplyr, ggplot2, tidyr
+License: MIT + file LICENSE
+LazyData: true
