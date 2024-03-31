@@ -1,0 +1,84 @@
+# Functions Documentation for Final Project
+
+## Introduction
+In this Markdown file, I will document the main functions developed for my final project. These functions are essential components of the project and serve specific purposes in the data analysis or application development process. Each function will be described in detail, including its purpose, inputs, outputs, and any additional relevant information.
+
+---
+
+## Function 1: preprocess_data()
+
+### Purpose:
+The preprocess_data() function is responsible for cleaning and preparing the raw data for further analysis. It performs tasks such as removing missing values, standardizing variables, and encoding categorical variables.
+
+### Inputs:
+- **data**: The raw dataset to be preprocessed.
+- **missing_method**: Method for handling missing values (e.g., "mean", "median", "remove").
+- **standardize**: Boolean flag indicating whether to standardize numeric variables.
+- **encode_categorical**: Boolean flag indicating whether to encode categorical variables.
+
+### Outputs:
+- **preprocessed_data**: The cleaned and prepared dataset ready for analysis.
+
+### Additional Information:
+- The missing_method parameter allows flexibility in how missing values are handled, providing options such as imputing with mean or median values or removing rows with missing data.
+- The standardize parameter enables the standardization of numeric variables, which can be crucial for certain machine learning algorithms.
+- The encode_categorical parameter allows the encoding of categorical variables into numerical representations for modeling purposes.
+
+### Example:
+```R
+preprocessed_data <- preprocess_data(data = raw_data, missing_method = "mean", standardize = TRUE, encode_categorical = TRUE)
+```
+
+---
+
+## Function 2: train_model()
+
+### Purpose:
+The train_model() function is responsible for training a machine learning model using the preprocessed data. It fits the model to the training data and evaluates its performance using cross-validation.
+
+### Inputs:
+- **preprocessed_data**: The preprocessed dataset containing features and target variable.
+- **model_type**: Type of machine learning model to train (e.g., "random_forest", "logistic_regression", "neural_network").
+- **parameters**: Additional parameters specific to the chosen model type.
+
+### Outputs:
+- **trained_model**: The trained machine learning model ready for predictions.
+
+### Additional Information:
+- The model_type parameter allows flexibility in choosing the type of model to train, enabling experimentation with different algorithms.
+- Additional parameters can be passed to the function to customize the model training process based on the chosen model type.
+
+### Example:
+```R
+trained_model <- train_model(preprocessed_data, model_type = "random_forest", parameters = list(num_trees = 100, max_depth = 5))
+```
+
+---
+
+## Function 3: make_predictions()
+
+### Purpose:
+The make_predictions() function is responsible for generating predictions using the trained machine learning model. It applies the model to new data and returns the predicted outcomes.
+
+### Inputs:
+- **new_data**: The new dataset for which predictions are to be made.
+- **trained_model**: The trained machine learning model.
+
+### Outputs:
+- **predictions**: The predicted outcomes based on the new data.
+
+### Additional Information:
+- This function requires the new data to have the same features as the training data used to train the model.
+- The trained_model parameter should be a model object returned by the train_model() function.
+
+### Example:
+```R
+predictions <- make_predictions(new_data, trained_model)
+```
+
+---
+
+## Conclusion
+These main functions play crucial roles in the data analysis or application development process for the final project. By documenting each function in detail, including their purpose, inputs, outputs, and additional information, users can easily understand and utilize these functions effectively. Additionally, examples are provided to demonstrate how to use each function in practice. This documentation serves as a valuable resource for project development and collaboration.
+
+---
